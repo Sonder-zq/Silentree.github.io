@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+.box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .ring{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #F66C6C ;
+    animation: circle 3s linear infinite;
+}
+@keyframes circle {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+
+}
+.box .ring:before{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    border-radius: 50%;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-color: #F66C6C;
+    box-shadow: 0 0 0 10px #F66C6C33,
+    0 0 0 20px #F66C6C22,
+    0 0 30px #F66C6C;
+    filter: blur(3px);
+}
+
+.box .ring:nth-child(2){
+    border-top: 4px solid #00FFCE;
+    animation-delay:-1s;
+}
+.box .ring:nth-child(2):before{
+    background-color: #00FFCE;
+    box-shadow: 0 0 0 10px #00FFCE33,
+    0 0 0 20px #00FFCE22,
+    0 0 30px #00FFCE;
+
+}
+
+.box .ring:nth-child(3){
+    position: absolute;
+    top: -66.66px;
+    border-top: 4px solid #56f157;
+    animation-delay:-2s;
+}
+.box .ring:nth-child(3):before{
+    background-color: #56f157;
+    box-shadow: 0 0 0 10px #56f15733,
+    0 0 0 20px #56f15722,
+    0 0 30px #56f157;
+}
+.box p{
+    position: absolute;
+    color: white;
+    font-size: 1.5em;
+    font-family: Consolas, serif;
+    bottom: -80px;
+    letter-spacing: 0.15em;
+}
+
+
